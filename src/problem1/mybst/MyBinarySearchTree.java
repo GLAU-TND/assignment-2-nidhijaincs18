@@ -64,6 +64,51 @@ public class MyBinarySearchTree {
         System.out.println("count of Nodes without left child: " + count);
     }
 
+    public void printLeftTree(TreeNode root) {
+        if (root == null)
+            return;
 
+        // add root
+        q.add(root);
+
+        // Delimiter
+        q.add(null);
+
+        while (q.size() > 0) {
+            TreeNode temp = q.peek();
+
+            if (temp != null) {
+
+                // Prints first node
+                // of each level
+                System.out.print(temp.getData() + " ");
+
+                // add children of all nodes at
+                // current level
+                while (q.peek() != null) {
+
+                    // If left child is present
+                    // add into queue
+                    if (temp.getLeft() != null)
+                        q.add(temp.getLeft());
+
+                    // If right child is present
+                    // add into queue
+                    if (temp.getRight() != null)
+                        q.add(temp.getRight());
+
+                    // remove the current node
+                    q.remove();
+
+                    temp = q.peek();
+                }
+                q.add(null);
+            }
+
+            // remove the delimiter of
+            // the previous level
+            q.remove();
+        }
+    }
 
 }
