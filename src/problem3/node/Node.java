@@ -11,4 +11,12 @@ public class Node {
     private Node next;
     private int priority;
 
+    //Constructor...........
+    public Node(int data, int priority) {
+        this.data = data;
+        this.next = null;
+        this.priority = priority;
+    }
+
+
 }
