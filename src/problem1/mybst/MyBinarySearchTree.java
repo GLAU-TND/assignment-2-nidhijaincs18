@@ -13,4 +13,7 @@ import java.util.Queue;
 
 // to implement BinarySearchTree
 public class MyBinarySearchTree {
+    static Queue<TreeNode> q;
+    //constructor
+
 }
