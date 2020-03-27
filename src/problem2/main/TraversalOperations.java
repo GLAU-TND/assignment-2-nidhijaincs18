@@ -12,6 +12,13 @@ public class TraversalOperations {
         printPostorder(node.getRight());
         System.out.print(node.getData() + " ");
     }
-
+    /* Given a binary tree, print its nodes in inorder*/
+    void printInorder(TreeNode node) {
+        if (node == null)
+            return;
+        printInorder(node.getLeft());
+        System.out.print(node.getData() + " ");
+        printInorder(node.getRight());
+    }
 
 }
