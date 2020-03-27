@@ -34,5 +34,36 @@ public class MyBinarySearchTree {
             inorderRec(root.getRight());
         }
     }
+    public void countNodeWithOutLeftChild(TreeNode root) {
+        // If tree is empty
+        if (root == null)
+            return;
+
+        // Do level order traversal starting from root
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        queue.add(root);
+
+        int count = 0; // Initialize count of half nodes
+        while (queue != null) {
+            TreeNode temp = queue.poll();
+            if (temp == null) {
+                break;
+            }
+
+            if (temp.getLeft() == null)
+                count++;
+
+            // Enqueue left child
+            if (temp.getLeft() != null)
+                queue.add(temp.getLeft());
+
+            // Enqueue right child
+            if (temp.getRight() != null)
+                queue.add(temp.getRight());
+        }
+        System.out.println("count of Nodes without left child: " + count);
+    }
+
+
 
 }
