@@ -26,5 +26,13 @@ public class MyBinarySearchTree {
             root.setLeft(insert(root.getLeft(), x));
         return root;
     }
+    // A utility function to do inorder traversal of BST
+    public void inorderRec(TreeNode root) {
+        if (root.getLeft() != null) {
+            inorderRec(root.getLeft());
+            System.out.println(root.getData());
+            inorderRec(root.getRight());
+        }
+    }
 
 }
