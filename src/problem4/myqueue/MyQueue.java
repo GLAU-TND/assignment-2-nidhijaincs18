@@ -59,6 +59,17 @@ public class MyQueue {
     public void setTmp(Node tmp) {
         this.tmp = tmp;
     }
+    public void queuePrint(MyQueue queue) {
+        while (queue.tmp != null) {
+
+            System.out.print(queue.tmp.getNode().getData() + ",");
+            queue.tmp = queue.tmp.getNext();
+        }
+        System.out.println("\b");
+        queue.tmp = queue.front;
+    }
+
+
 
 
 }
