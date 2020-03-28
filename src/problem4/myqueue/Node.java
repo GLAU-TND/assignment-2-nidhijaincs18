@@ -12,6 +12,10 @@ public class Node {
     }
 
 
+    public Node(TreeNode treenode) {
+        node = treenode;
+        next = null;
+    }
 
 
 }
