@@ -35,6 +35,20 @@ public class MyPriorityQueue {
         }
     }
 
+    //method to display elements............
+    public void display() {
+        if (isEmpty()) {
+            System.out.println("underflow");
+        } else {
+            Node tem = front;
+            while (tem != null) {
+                System.out.println(tem.getData() + " " + tem.getPriority());
+                tem = tem.getNext();
+            }
+        }
+    }
+}
+
 
 
 }
