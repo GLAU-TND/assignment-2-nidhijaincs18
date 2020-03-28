@@ -34,7 +34,21 @@ public class MyCircularQueue {
     public void setTmp(Node tmp) {
         this.tmp = tmp;
     }
+    public void enqueue(Node newNode) {
+        if (front == null) {
+            tmp = front = newNode;
+            return;
+        }
+        if (tmp.getNext() == null) {
+            tmp.setNext(newNode);
+            newNode.setNext(tmp);
+            end = newNode;
+            return;
+        }
+        newNode.setNext(tmp.getNext());
+        tmp.setNext(newNode);
 
+    }
 
 
 
