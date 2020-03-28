@@ -61,6 +61,20 @@ public class MyCircularQueue {
         } catch (NullPointerException ignored) {
         }
     }
+    public void remove(String name) {
+        tmp = front;
+        if (tmp.getS().getName().equals(name) && tmp.getS().getBacklog() == 0) {
+            tmp = front = front.getNext();
+        }
+        while (!tmp.getNext().getS().getName().equals(name)) {
+            tmp = tmp.getNext();
+            if (tmp == front)
+                return;
+        }
+        if (tmp.getS().getBacklog() == 0) {
+            tmp.setNext(tmp.getNext().getNext());
+        }
+    }
 
 
 
