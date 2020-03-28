@@ -18,6 +18,21 @@ public class Node {
         this.s = s;
         next = null;
     }
+    public Student getS() {
+        return s;
+    }
+
+    public void setS(Student s) {
+        this.s = s;
+    }
+
+    public Node getNext() {
+        return next;
+    }
+
+    public void setNext(Node next) {
+        this.next = next;
+    }
 
 
 
